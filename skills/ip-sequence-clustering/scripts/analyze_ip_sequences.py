@@ -64,7 +64,7 @@ def phases_by_novelty(ips, excluded):
 def cycle_windows(ips, start, stop, excluded):
     """Heuristic cycle splits, based on majority repeat count and rank resets."""
     keep=[(i,ip) for i in range(start,stop) if (ip:=ips[i]) not in excluded]
-    if len(keep)<10: return [(start,stop)]
+    if len(keep)<6: return [(start,stop)]
     freq=Counter(ip for _,ip in keep)
     repeats=Counter(freq.values()).most_common(1)[0][0]
     if repeats<2 or repeats>12: return [(start,stop)]
