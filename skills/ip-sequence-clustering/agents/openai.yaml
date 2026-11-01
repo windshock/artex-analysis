@@ -1,0 +1,3 @@
+interface:
+  display_name: "IP Sequence Clustering"
+  short_description: "Identify repeated IP pools and sequence anomalies"
