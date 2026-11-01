@@ -10,6 +10,8 @@ AI-assisted intrusion workflows are not reducible to one User-Agent or one sourc
 
 > **Independent datasets.** ARTEX tool-behavior experiments and proxy-IP sequence analysis are distinct research tracks. They do not establish a shared incident, actor, or campaign. Only synthetic demonstration IPs are published.
 
+![English research workflow overview](assets/behavioral-analysis-overview.svg)
+
 ## Quick start
 
 Run the offline analyzer with Python 3.10+ (standard library only):
