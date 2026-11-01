@@ -1,0 +1,22 @@
+name: IP sequence analyzer tests
+on:
+  push:
+    paths:
+      - "skills/ip-sequence-clustering/**"
+      - ".github/workflows/skill-tests.yml"
+  pull_request:
+    paths:
+      - "skills/ip-sequence-clustering/**"
+      - ".github/workflows/skill-tests.yml"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run unit tests
+        run: python -m unittest discover -s skills/ip-sequence-clustering/scripts/tests -v
+      - name: Analyze synthetic demo
+        run: python skills/ip-sequence-clustering/scripts/analyze_ip_sequences.py skills/ip-sequence-clustering/assets/demo_ip_sequence.txt --out results
